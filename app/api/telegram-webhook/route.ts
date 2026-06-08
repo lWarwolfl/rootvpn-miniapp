@@ -11,16 +11,17 @@ export async function POST(req: NextRequest) {
     if (update.message?.text === '/start') {
       await sendTelegramMessage(
         update.message.chat.id,
-        '🎮 *Welcome to Points Game!*\n\n' +
-          'Collect points and compete with friends!\n\n' +
-          '🎁 Daily rewards\n' +
-          '💎 Buy points with Stars (real payments!)\n' +
-          '💸 Test refunds with `/refund`\n\n' +
-          'Tap the button below to play!',
+        '🛡️ *Welcome to Root VPN!*\n\n' +
+          'Secure your internet connection, bypass restrictions, and browse anonymously.\n\n' +
+          '🌍 Global server access\n' +
+          '⚡ Blazing fast speeds\n' +
+          '🔒 Strict no-logs policy\n' +
+          '💳 Pay securely with Telegram Stars\n\n' +
+          'Tap the button below to view our plans and get connected!',
         {
           parse_mode: 'Markdown',
           reply_markup: {
-            inline_keyboard: [[{ text: '🎮 Play Game', web_app: { url: APP_URL } }]],
+            inline_keyboard: [[{ text: '🛒 Open Store', web_app: { url: APP_URL } }]],
           },
         }
       )
@@ -30,15 +31,16 @@ export async function POST(req: NextRequest) {
     if (update.message?.text === '/help') {
       await sendTelegramMessage(
         update.message.chat.id,
-        '❓ *How to Play*\n\n' +
-          '1️⃣ Open the game from the button\n' +
-          '2️⃣ Claim daily points\n' +
-          '3️⃣ Buy more points with Stars\n' +
-          '4️⃣ Test refunds with receipt ID\n\n' +
+        '❓ *Root VPN Help*\n\n' +
+          '*How to get started:*\n' +
+          '1️⃣ Open the store via the main menu\n' +
+          '2️⃣ Choose a subscription plan\n' +
+          '3️⃣ Receive your VPN configuration keys\n' +
+          '4️⃣ Connect and browse securely!\n\n' +
           '*Commands:*\n' +
-          '/start - Start the game\n' +
-          '/help - Show this help\n' +
-          '/refund RECEIPT\\_ID - Refund a payment', // Escaped underscore
+          '/start - Open the main menu\n' +
+          '/help - Show this help message\n' +
+          '/refund RECEIPT\\_ID - Request a refund for a recent purchase',
         { parse_mode: 'Markdown' }
       )
     }

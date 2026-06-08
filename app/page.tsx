@@ -1,10 +1,14 @@
 'use client'
 
+import { ChartBarStacked } from '@/components/main/temp-chart'
+import { SpinnerDemo } from '@/components/main/temp-item'
+import { Badge } from '@/components/ui/badge'
+import { RiCircleFill, RiUser2Line } from '@remixicon/react'
+import { WebAppUser } from '@twa-dev/types'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [user, setUser] = useState<any>()
+  const [user, setUser] = useState<WebAppUser>()
 
   useEffect(() => {
     const initTelegram = async () => {
@@ -17,7 +21,7 @@ export default function Home() {
       }
 
       try {
-        WebApp.setHeaderColor('#00F0FF')
+        WebApp.setHeaderColor('#007AFF')
 
         const isDesktop = ['tdesktop', 'macos', 'web', 'weba', 'webk'].includes(WebApp.platform)
 
@@ -35,11 +39,25 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="text-center">
-      <p className="whitespace-pre-wrap">{JSON.stringify(user)}</p>
+    <div className="mx-auto flex w-full max-w-md flex-col items-center gap-4">
+      <div className="flex w-full items-center justify-between gap-4">
+        <Badge variant="secondary">
+          {user?.first_name}
+          {user?.last_name ? ` ${user.last_name}` : null}
+          <RiUser2Line />
+        </Badge>
+
+        <Badge>
+          <RiCircleFill /> Online
+        </Badge>
+      </div>
+
+      <SpinnerDemo />
+
+      <ChartBarStacked />
 
       <p>
-        Made with <span className="text-red-500">❤️</span>
+        Made with <span className="text-red-500">❤️</span> in Ecode
       </p>
     </div>
   )

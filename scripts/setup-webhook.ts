@@ -12,7 +12,7 @@ if (!BOT_TOKEN || !APP_URL) {
     process.exit(1)
 }
 
-const WEBHOOK_URL = `${APP_URL}/api/telegram-webhook`
+const WEBHOOK_URL = `${APP_URL}api/telegram-webhook`
 
 async function setupWebhook() {
     try {

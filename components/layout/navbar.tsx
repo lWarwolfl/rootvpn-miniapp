@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <div className="fixed bottom-0 left-0 flex w-full flex-col items-center p-4">
-      <div className="bg-card flex w-full max-w-xs items-center justify-between gap-2 rounded-full p-1.5">
+      <div className="bg-card flex w-full max-w-2xs items-center justify-between gap-2 rounded-full p-1.5">
         {mainItems.map((item) => (
           <Navbar.NavLink key={item.path} appLink={item} />
         ))}
@@ -29,7 +29,7 @@ Navbar.NavLink = function NavLink({
   return (
     <Link
       className={cn(
-        'bg-muted text-muted-foreground flex w-full max-w-15 flex-col items-center gap-0.5 rounded-full p-1 text-[10px] font-medium',
+        'bg-muted text-muted-foreground flex w-full max-w-14 flex-col items-center gap-0.5 rounded-full p-1 text-[10px] font-medium',
         className,
         { 'bg-background text-text': appLink.isActive }
       )}

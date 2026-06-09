@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="flex h-dvh flex-col items-center">
         <ThemeProvider>
           <div className="flex w-full flex-1 flex-col items-center justify-end bg-linear-to-b from-[#007AFF] to-[#5FB5F4]">
-            <main className="bg-background flex h-[90dvh] w-full flex-col overflow-x-hidden overflow-y-auto rounded-t-3xl px-4 pb-22 text-center">
+            <main className="bg-background flex h-[90dvh] w-full flex-col overflow-x-hidden overflow-y-auto rounded-t-4xl px-4 pb-22 text-center">
               {children}
             </main>
           </div>

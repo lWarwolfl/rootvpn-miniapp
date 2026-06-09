@@ -48,7 +48,7 @@ const chartConfig = {
 
 export function ChartBarStacked() {
   return (
-    <Card size="sm" className="w-full">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Bandwidth Usage</CardTitle>
         <CardDescription>Upload, Download, and Remaining Quota (GB)</CardDescription>

@@ -1,9 +1,10 @@
 'use client'
 
+import Header from '@/components/layout/header'
+import Navbar from '@/components/layout/navbar'
 import { ChartBarStacked } from '@/components/main/temp-chart'
 import { SpinnerDemo } from '@/components/main/temp-item'
-import { Badge } from '@/components/ui/badge'
-import { RiCircleFill, RiUser2Line } from '@remixicon/react'
+import { SectionCards } from '@/components/main/temp-sections'
 import { WebAppUser } from '@twa-dev/types'
 import { useEffect, useState } from 'react'
 
@@ -40,17 +41,9 @@ export default function Home() {
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-col items-center gap-4">
-      <div className="flex w-full items-center justify-between gap-4">
-        <Badge variant="secondary">
-          {user?.first_name}
-          {user?.last_name ? ` ${user.last_name}` : null}
-          <RiUser2Line />
-        </Badge>
+      <Header user={user} />
 
-        <Badge>
-          <RiCircleFill /> Online
-        </Badge>
-      </div>
+      <SectionCards />
 
       <SpinnerDemo />
 
@@ -59,6 +52,8 @@ export default function Home() {
       <p>
         Made with <span className="text-red-500">❤️</span> in Ecode
       </p>
+
+      <Navbar />
     </div>
   )
 }
